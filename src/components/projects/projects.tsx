@@ -1,4 +1,5 @@
 import { ThreeDCardDemo } from "./projectslist";
+import { RevealCSSOnHover } from "./techstack";
 
 export default function Projects() {
 	return (
@@ -12,6 +13,13 @@ export default function Projects() {
 						imageSrc="/proj_amazon.jpg"
 						githubLink="https://github.com/AnkitSeal2023/amazon_clone"
 						tryLink="https://github.com/AnkitSeal2023/amazon_clone"
+						techstack={{
+							js: true,
+							reactjs: true,
+							css: true,
+							expressjs: true,
+							mongodb: true
+						}}
 					/>
 				</div>
 				<div className="flex justify-center">
@@ -21,6 +29,10 @@ export default function Projects() {
 						imageSrc="/proj_portfolio.png"
 						githubLink="https://github.com/AnkitSeal2023/portfolio"
 						tryLink="https://ankitseal.in"
+						techstack={{
+							nextjs: true,
+							tailwindcss: true,
+						}}
 					/>
 				</div>
 				<div className="flex justify-center">
@@ -30,6 +42,13 @@ export default function Projects() {
 						imageSrc="/proj_coming_soon.jpg"
 						githubLink="https://github.com/AnkitSeal2023/modchat_client"
 						wip={true}
+						techstack={{
+							ts: true,
+							nextjs: true,
+							tailwindcss: true,
+							go: true,
+							postgres: true
+						}}
 					/>
 				</div>
 				<div className="flex justify-center">
@@ -38,6 +57,12 @@ export default function Projects() {
 						description="A secure password manager to store and manage your passwords safely."
 						imageSrc="/proj_passman.png"
 						githubLink="https://github.com/AnkitSeal2023/passman"
+						techstack={{
+								go:true,
+								htmx: true,
+								tailwindcss: true,
+								postgres: true
+							}}
 					/>
 				</div>
 			</div>
