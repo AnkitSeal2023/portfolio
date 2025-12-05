@@ -20,7 +20,11 @@ export function ResumeCard() {
 			.then(() => setIsResumeAnimating(false));
 	};
 	return (
-		<div className="flex justify-center h-9 text-center font-sm">
+		<div className="flex justify-center h-9 text-center font-sm"
+			  onClick={()=>{
+				 window.open("https://drive.google.com/file/d/1YMTERGr5cn_1GMA6QmCEbjJrC_5PfE8Z/view?usp=sharing", "_blank")
+			  }}
+		>
 			<div
 				onMouseEnter={triggerResumeAnimation}
 				onTouchStartCapture={triggerResumeAnimation}
