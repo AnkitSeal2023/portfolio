@@ -44,7 +44,6 @@ export function ThreeDCardDemo(props: ThreeDCardDemoProps) {
 	revealTechInitial.html = props.techstack?.html || false;
 	revealTechInitial.tailwindcss = props.techstack?.tailwindcss || false;
 	revealTechInitial.postgres = props.techstack?.postgres || false;
-	console.log("revealTechInitial:", revealTechInitial);
 	return (
 		<CardContainer className="bg-transparent max-w-full md:max-w-31/31 inter-var"
 			containerClassName="max-w-full "

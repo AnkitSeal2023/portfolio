@@ -1,5 +1,4 @@
-import { ThreeDCardDemo } from "./projectslist";
-import { RevealCSSOnHover } from "./techstack";
+import { ThreeDCardDemo } from "./projectCard";
 
 export default function Projects() {
 	return (
@@ -38,7 +37,7 @@ export default function Projects() {
 				<div className="flex justify-center">
 					<ThreeDCardDemo
 						label="Modchat"
-						description="A chat application with modern UI and realtime chat moderation."
+						description="A chat application with modern UI and active chat moderation."
 						imageSrc="/proj_coming_soon.jpg"
 						githubLink="https://github.com/AnkitSeal2023/modchat_client"
 						wip={true}
