@@ -1,4 +1,5 @@
-# Developer Portfolio – ankitseal.in
+[ankitseal.in](https://ankitseal.in)
+# Developer Portfolio – [ankitseal.in](https://ankitseal.in)
 
 A modern, full-stack developer portfolio powering [**ankitseal.in**](https://ankitseal.in), built with **Next.js, TypeScript (TSX), Tailwind CSS, Framer Motion, Node.js, and MongoDB/SQL**.  
 The site includes an **About section, Project showcases, Contact details**, and a responsive, accessible UI designed with a focus on performance and SEO.
