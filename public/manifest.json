@@ -1,0 +1,18 @@
+{
+	"name": "Ankit Seal Portfolio",
+	"short_name": "AnkitSeal",
+	"start_url": "/",
+	"scope": "/",
+	"id": "/",
+	"display": "standalone",
+	"background_color": "#000000",
+	"theme_color": "#000000",
+	"description": "Portfolio of Ankit Seal, full-stack developer.",
+	"icons": [
+		{
+			"src": "/pfp.webp",
+			"sizes": "800x800",
+			"type": "image/webp"
+		}
+	]
+}

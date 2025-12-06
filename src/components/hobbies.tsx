@@ -17,7 +17,7 @@ export default function HobbiesList() {
   }, []);
 
   return (
-    <div className="flex h-10 ">
+    <h1 className="flex h-10 ">
       <AnimatePresence mode="wait">
         <motion.p
           key={index}
@@ -30,6 +30,6 @@ export default function HobbiesList() {
           {terms[index]}
         </motion.p>
       </AnimatePresence>
-    </div>
+    </h1>
   );
 }

@@ -43,7 +43,7 @@ export default function Navbar() {
         [1, 0.3]
     );
 	return (
-		<div className="flex h-16 w-full justify-center fixed top-0 z-20">
+		<nav className="flex h-16 w-full justify-center fixed top-0 z-20">
 			<div className="max-w-3xl w-full px-3 h-16 flex justify-between items-center py-4 backdrop-blur-xs ">
 				<div className="text-neutral-900 dark:text-white flex items-end text-sm md:px-1 ">
 					<motion.div
@@ -79,6 +79,6 @@ export default function Navbar() {
 					<ThemeToggle />
 				</div>
 			</div>
-		</div>
+		</nav>
 	);
 }

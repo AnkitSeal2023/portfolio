@@ -176,14 +176,14 @@ export default function Page() {
 					<div className='flex items-center w-full'></div>
 					<div >
 						<div className='flex flex-col md:flex-row pt-40 text-neutral-900 dark:text-neutral-200 text-3xl overflow-visible'>
-							<div className="font-semibold mr-2">
+							<h1 className="font-semibold mr-2">
 								Hi, I'm Ankit —
-							</div>
+							</h1>
 							<HobbiesList />
 						</div>
-						<div className='text-neutral-700 dark:text-neutral-400 font-normal py-7'>
+						<h3 className='text-neutral-700 dark:text-neutral-400 font-normal py-7'>
 							I do the whole stack— <span className='font-mono'>frontend</span>, <span className='font-mono'>backend</span>, and the glue that holds them together on a good day.
-						</div>
+						</h3>
 						<div className='
 						    z-10
 							bottom-0
