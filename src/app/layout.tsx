@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
 import { JetBrains_Mono } from "next/font/google";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -34,6 +35,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					{children}
+					<Analytics />
 				</ThemeProvider>
 			</body>
 		</html>

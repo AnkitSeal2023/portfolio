@@ -107,7 +107,7 @@ export default function LoadingScreen({ isLoading, onLoadComplete }: LoadingScre
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								transition={{ delay: 0.2 }}
-								className="text-sm dark:text-neutral-400 text-muted font-mono"
+								className="text-sm dark:text-neutral-400 text-neutral-600 font-mono"
 							>
 								Best viewed in Chromium browsers.
 							</motion.p>

@@ -30,6 +30,7 @@ export default function Projects() {
 						tryLink="https://ankitseal.in"
 						techstack={{
 							nextjs: true,
+							ts: true,
 							tailwindcss: true,
 						}}
 					/>

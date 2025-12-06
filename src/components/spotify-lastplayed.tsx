@@ -26,7 +26,7 @@ export function SpotifyLastPlayedToast() {
 								alt="Spotify Playing Album Art"
 								width={40}
 								height={40}
-								className="rounded-md "
+								className="rounded-md"
 							/>
 						</div>
 					</div>
@@ -41,17 +41,20 @@ export function SpotifyLastPlayedToast() {
 							/>
 							<div className="text-xs flex items-center text-neutral-600 dark:text-neutral-400 font-medium">Last Played</div>
 						</div>
-						<div className="flex-col flex">
-							<span className="text-sm font-semibold">{spotify_elements.song_name}</span>
+						<div className="flex-col flex  ">
+							<span className="text-sm font-semibold hover:underline cursor-pointer"
+									onClick={() => window.open("https://open.spotify.com/track/1oFAF1hdPOickyHgbuRjyX", "_blank")}
+							>{spotify_elements.song_name}</span>
 							<span className="text-xs text-neutral-600 dark:text-neutral-400">by {spotify_elements.artist_name}</span>
 						</div>
 					</div>
 				</div>
-				<div className="flex justify-center items-center dark:bg-neutral-900 text-white
+				<div className="cursor-pointer flex justify-center items-center dark:bg-neutral-900 text-white
 								dark:shadow-[inset_0_3px_8px_rgba(255,255,255,0.08),inset_0_-3px_8px_rgba(0,0,0,0.6)]
 								shadow-[inset_0_3px_8px_rgba(255,255,255,0.08),inset_0_-3px_8px_rgba(0,0,0,0.2)]
-								border dark:border-neutral-800 rounded-md
-				">
+								border dark:border-neutral-800 rounded-md"
+								onClick={() => window.open("https://open.spotify.com/track/1oFAF1hdPOickyHgbuRjyX", "_blank")}
+								>
 					<Play className="m-2 stroke-2 stroke-neutral-800 dark:stroke-neutral-300" size={16} />
 				</div>
 

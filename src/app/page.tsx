@@ -3,9 +3,7 @@ import Lenis from 'lenis'
 import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import Image from 'next/image';
-import { FileTextIcon, Send } from 'lucide-react';
-import ThemeToggle from '@/components/theme-toggle';
+import { Send } from 'lucide-react';
 import Navbar from '@/components/navbar';
 import HobbiesList from '@/components/hobbies';
 import { AnimatedTooltipPreview } from '@/components/mylinks';
@@ -194,20 +192,21 @@ export default function Page() {
 							left-1/2
 							-translate-x-1/2
 							w-full
-							max-w-4xl
 							px-5
 							h-60
-							      pointer-events-none
-								  bg-gradient-to-t
-      from-white/30
-      to-white/0
-      dark:from-neutral-950/100
-      dark:to-neutral-950/0
-	  blur-2xl
-					'></div>
+								pointer-events-none
+								bg-gradient-to-t
+							from-white/30
+							to-white/0
+							dark:from-neutral-950
+							dark:to-neutral-950/0
+							blur-2xl`
+						'></div>
 						<div className="flex space-x-3">
 							<ResumeCard />
-							<div className="flex justify-center h-9 text-center text-sm">
+							<div className="flex justify-center h-9 text-center text-sm"
+								onClick={() => window.open("https://www.linkedin.com/in/ankit-seal-26358328a/", "_blank")}
+							>
 								<div
 									onMouseEnter={triggerContactAnimation}
 									onTouchStartCapture={triggerContactAnimation}
@@ -216,16 +215,15 @@ export default function Page() {
 										containerClassName="rounded-md"
 										as="button"
 										className="flex items-center space-x-2 h-8 cursor-pointer
-                       bg-neutral-900 text-neutral-100
-                       dark:bg-neutral-100 dark:text-neutral-900
-                       py-4.5 rounded-md"
+										bg-neutral-900 text-neutral-100
+										dark:bg-neutral-100 dark:text-neutral-900
+										py-4.5 rounded-md"
 									>
 										<motion.div animate={contactControls} className="rotate-10">
 											<Send className="size-4 mr-1 stroke-[1.7]" />
 										</motion.div>
 
 										<div className="text-xs font-medium"
-											onClick={() => window.open("https://www.linkedin.com/in/ankit-seal-26358328a/", "_blank")}
 										>
 											Get in touch
 										</div>
