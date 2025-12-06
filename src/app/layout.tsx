@@ -105,6 +105,10 @@ export default function RootLayout({
 
 	const personSchema = {
 		"@context": "https://schema.org",
+		"@mainEntityOfPage": {
+			"@type": "WebPage",
+			"@id": "https://ankitseal.in#webpage"
+		},
 		"@type": "Person",
 		"@id": "https://ankitseal.in#me",
 		"name": "Ankit Seal",
@@ -201,31 +205,26 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
-				{/* WebPage (first one) */}
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
 				/>
 
-				{/* Breadcrumb */}
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
 				/>
 
-				{/* Person */}
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
 				/>
 
-				{/* CreativeWork — ADD IT HERE */}
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorks) }}
 				/>
 
-				{/* Website */}
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
