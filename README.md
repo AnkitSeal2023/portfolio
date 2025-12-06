@@ -1,4 +1,4 @@
-[ankitseal.in](https://ankitseal.in)
+# [ankitseal.in](https://ankitseal.in)
 # Developer Portfolio – [ankitseal.in](https://ankitseal.in)
 
 A modern, full-stack developer portfolio powering [**ankitseal.in**](https://ankitseal.in), built with **Next.js, TypeScript (TSX), Tailwind CSS, Framer Motion, Node.js, and MongoDB/SQL**.  
