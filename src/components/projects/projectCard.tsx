@@ -3,7 +3,21 @@
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Github } from "lucide-react";
-import ExpandTechStackOnHover, { RevealCSSOnHover, RevealExpressJSOnHover, RevealGOOnHover, RevealHTMXOnHover, RevealNextJSOnHover, RevealJSOnHover, RevealTailwindOnHover,  RevealMongoDBOnHover,  RevealReactJSOnHover, RevealTypeScriptOnHover, RevealHTMLOnHover, RevealPostgresOnHover } from "./techstack";
+import ExpandTechStackOnHover, {
+	RevealCSSOnHover,
+	RevealExpressJSOnHover,
+	RevealGOOnHover,
+	RevealHTMXOnHover,
+	RevealNextJSOnHover,
+	RevealJSOnHover,
+	RevealTailwindOnHover,
+	RevealMongoDBOnHover,
+	RevealReactJSOnHover,
+	RevealTypeScriptOnHover,
+	RevealHTMLOnHover,
+	RevealPostgresOnHover,
+	RevealAceternityOnHover,
+} from "./techstack";
 
 type ThreeDCardDemoProps = {
 	label: string;
@@ -13,9 +27,10 @@ type ThreeDCardDemoProps = {
 	tryLink?: string;
 	wip?: boolean;
 	techstack?: RevealTechFlags;
-}
+};
 
 type RevealTechFlags = {
+	aceternity?: boolean;
 	nextjs?: boolean;
 	reactjs?: boolean;
 	go?: boolean;
@@ -45,7 +60,8 @@ export function ThreeDCardDemo(props: ThreeDCardDemoProps) {
 	revealTechInitial.tailwindcss = props.techstack?.tailwindcss || false;
 	revealTechInitial.postgres = props.techstack?.postgres || false;
 	return (
-		<CardContainer className="bg-transparent max-w-full md:max-w-31/31 inter-var"
+		<CardContainer
+			className="bg-transparent max-w-full md:max-w-31/31 inter-var"
 			containerClassName="max-w-full "
 		>
 			<CardBody className="bg-gray-50/60 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black/60 dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
@@ -71,19 +87,29 @@ export function ThreeDCardDemo(props: ThreeDCardDemoProps) {
 						alt={`${props.label} thumbnail`}
 					/>
 					<div className="flex pt-5 -space-x-1.5">
-						{revealTechInitial.nextjs && <RevealNextJSOnHover/>}
-						{revealTechInitial.css && <RevealCSSOnHover/>}
-						{revealTechInitial.reactjs && <RevealReactJSOnHover/>}
-						{revealTechInitial.go && <RevealGOOnHover/>}
-						{revealTechInitial.expressjs && <RevealExpressJSOnHover/>}
-						{revealTechInitial.htmx && <RevealHTMXOnHover/>}
-						{revealTechInitial.js && <RevealJSOnHover/>}
-						{revealTechInitial.ts && <RevealTypeScriptOnHover/>}
-						{revealTechInitial.mongodb && <RevealMongoDBOnHover/>}
-						{revealTechInitial.html && <RevealHTMLOnHover/>}
-						{revealTechInitial.tailwindcss && <RevealTailwindOnHover/>}
-						{revealTechInitial.postgres && <RevealPostgresOnHover/>}
-
+						{revealTechInitial.aceternity && (
+							<RevealNextJSOnHover />
+						)}
+						{revealTechInitial.nextjs && (
+							<RevealAceternityOnHover />
+						)}
+						{revealTechInitial.css && <RevealCSSOnHover />}
+						{revealTechInitial.reactjs && <RevealReactJSOnHover />}
+						{revealTechInitial.go && <RevealGOOnHover />}
+						{revealTechInitial.expressjs && (
+							<RevealExpressJSOnHover />
+						)}
+						{revealTechInitial.htmx && <RevealHTMXOnHover />}
+						{revealTechInitial.js && <RevealJSOnHover />}
+						{revealTechInitial.ts && <RevealTypeScriptOnHover />}
+						{revealTechInitial.mongodb && <RevealMongoDBOnHover />}
+						{revealTechInitial.html && <RevealHTMLOnHover />}
+						{revealTechInitial.tailwindcss && (
+							<RevealTailwindOnHover />
+						)}
+						{revealTechInitial.postgres && (
+							<RevealPostgresOnHover />
+						)}
 					</div>
 				</CardItem>
 				<div className="flex justify-between items-center mt-10">
@@ -95,9 +121,7 @@ export function ThreeDCardDemo(props: ThreeDCardDemoProps) {
 						className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
 					>
 						<div className="whitespace-nowrap flex flex-row justify-center items-center mr-2 border rounded p-1">
-							<Github
-								className="size-4 mr-1"
-							/>
+							<Github className="size-4 mr-1" />
 							Source Code →
 						</div>
 					</CardItem>
@@ -119,10 +143,10 @@ export function ThreeDCardDemo(props: ThreeDCardDemoProps) {
 							as="span"
 							className="flex items-center px-2 py-1 rounded-xl bg-neutral-200 dark:bg-green-900/20 dark:text-neutral-300 text-xs font-bold"
 						>
-							<div className="rounded min-w-2 min-h-2 animate-pulse bg-green-400 mr-1"></div>Work In Progress
+							<div className="rounded min-w-2 min-h-2 animate-pulse bg-green-400 mr-1"></div>
+							Work In Progress
 						</CardItem>
 					)}
-
 				</div>
 			</CardBody>
 		</CardContainer>

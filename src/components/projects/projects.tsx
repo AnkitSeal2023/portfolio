@@ -4,7 +4,8 @@ export default function Projects() {
 	return (
 		<section
 			id="projects"
-			className="flex flex-col justify-center py-10 w-full">
+			className="flex flex-col justify-center py-10 w-full"
+		>
 			<h1 className="text-3xl font-bold mb-5">Projects</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 md:space-x-2">
 				<div className="flex justify-center">
@@ -19,7 +20,7 @@ export default function Projects() {
 							reactjs: true,
 							css: true,
 							expressjs: true,
-							mongodb: true
+							mongodb: true,
 						}}
 					/>
 				</div>
@@ -31,6 +32,7 @@ export default function Projects() {
 						githubLink="https://github.com/AnkitSeal2023/portfolio"
 						tryLink="https://ankitseal.in"
 						techstack={{
+							aceternity: true,
 							nextjs: true,
 							ts: true,
 							tailwindcss: true,
@@ -49,7 +51,7 @@ export default function Projects() {
 							nextjs: true,
 							tailwindcss: true,
 							go: true,
-							postgres: true
+							postgres: true,
 						}}
 					/>
 				</div>
@@ -60,11 +62,11 @@ export default function Projects() {
 						imageSrc="/proj_passman.png"
 						githubLink="https://github.com/AnkitSeal2023/passman"
 						techstack={{
-								go:true,
-								htmx: true,
-								tailwindcss: true,
-								postgres: true
-							}}
+							go: true,
+							htmx: true,
+							tailwindcss: true,
+							postgres: true,
+						}}
 					/>
 				</div>
 			</div>
