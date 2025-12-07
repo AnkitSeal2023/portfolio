@@ -16,7 +16,7 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
 	title: {
-		default: 'Ankit Seal - Full Stack Developer & Linux Enthusiast',
+		default: 'Ankit Seal - Full Stack Developer & Software Engineer',
 		template: '%s | Ankit Seal'
 	},
 	description: 'Portfolio of Ankit Seal, a full-stack developer specializing in React, Next.js, TypeScript, Node.js, and DevOps. Explore innovative projects, technical expertise, and digital solutions.',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
 		locale: 'en_US',
 		url: 'https://ankitseal.in',
 		siteName: 'Ankit Seal Portfolio',
-		title: 'Ankit Seal - Full Stack Developer & Linux Enthusiast',
+		title: 'Ankit Seal - Full Stack Developer & Software Engineer',
 		description: "Hi, I'm Ankit - a full-stack developer building modern web apps, tools, and digital experiences. Explore my projects and technical expertise.",
 		images: [
 			{
@@ -140,7 +140,7 @@ export default function RootLayout({
 		"url": "https://ankitseal.in",
 		"image": "https://ankitseal.in/pfp.webp",
 		"jobTitle": "Full Stack Developer",
-		"headline": "Full Stack Developer & Linux Enthusiast",
+		"headline": "Full Stack Developer & Software Engineer",
 		"description": "Full-stack developer specializing in frontend, backend, system design, and cloud-ready applications.",
 		"knowsAbout": [
 			"Web Development", "Full Stack Development", "React", "Next.js",

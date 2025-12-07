@@ -12,6 +12,7 @@ import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { SpotifyLastPlayedToast } from '@/components/spotify-lastplayed';
 import LoadingScreen from '@/components/loading-screen';
 import Projects from '@/components/projects/projects';
+import AboutSection from '@/components/aboutSection';
 
 export default function Page() {
 	const [isLoading, setIsLoading] = useState(true);
@@ -262,6 +263,7 @@ export default function Page() {
 						<AnimatedTooltipPreview />
 						<SpotifyLastPlayedToast />
 						<Projects />
+						<AboutSection />
 					</div>
 				</div>
 			</div>
