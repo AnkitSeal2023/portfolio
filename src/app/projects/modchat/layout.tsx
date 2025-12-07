@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
 	title: 'ModChat - Real-time Chat Application',
@@ -16,5 +17,35 @@ export default function ModChatLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	return children;
+	return (
+		<>
+			<Script id="breadcrumb-schema" type="application/ld+json">
+				{JSON.stringify({
+					"@context": "https://schema.org",
+					"@type": "BreadcrumbList",
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"name": "Home",
+							"item": "https://ankitseal.in/"
+						},
+						{
+							"@type": "ListItem",
+							"position": 2,
+							"name": "Projects",
+							"item": "https://ankitseal.in/projects"
+						},
+						{
+							"@type": "ListItem",
+							"position": 3,
+							"name": "ModChat",
+							"item": "https://ankitseal.in/projects/modchat"
+						}
+					]
+				})}
+			</Script>
+			{children}
+		</>
+	);
 }
