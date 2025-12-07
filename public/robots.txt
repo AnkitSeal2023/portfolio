@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block sensitive pages
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://ankitseal.in/sitemap.xml

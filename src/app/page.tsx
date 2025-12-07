@@ -158,6 +158,34 @@ export default function Page() {
 
 	return (
 		<>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Person",
+						"name": "Ankit Seal",
+						"url": "https://ankitseal.in",
+						"image": "https://ankitseal.in/pfp.webp",
+						"jobTitle": "Full Stack Developer",
+						"description": "Full-stack developer specializing in React, Next.js, TypeScript, Node.js, and DevOps",
+						"sameAs": [
+							"https://github.com/ankitseal",
+							"https://linkedin.com/in/ankitseal",
+							"https://twitter.com/seal_ankit17027"
+						],
+						"knowsAbout": [
+							"React",
+							"Next.js",
+							"TypeScript",
+							"Node.js",
+							"Web Development",
+							"Linux",
+							"DevOps"
+						]
+					})
+				}}
+			/>
 			<LoadingScreen isLoading={isLoading} />
 
 			<div className='font-sans relative flex w-full items-center justify-center bg-neutral-50 dark:bg-neutral-950'>

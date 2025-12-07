@@ -16,7 +16,7 @@ test/
 # next.js
 /.next/
 /out/
-
+test_seo.md
 # production
 /build
 

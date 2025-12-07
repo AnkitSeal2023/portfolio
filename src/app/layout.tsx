@@ -15,12 +15,37 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-	title: 'Ankit Seal - Full Stack Developer & Linux Enthusiast',
-	description: 'Portfolio of Ankit Seal, a full-stack developer specializing in frontend, backend, and DevOps. View my projects, resume, and get in touch.',
-	keywords: ['Ankit Seal', 'Full Stack Developer', 'Portfolio', 'Web Development', 'Linux', 'React', 'Next.js'],
-	authors: [{ name: 'Ankit Seal' }],
+	title: {
+		default: 'Ankit Seal - Full Stack Developer & Linux Enthusiast',
+		template: '%s | Ankit Seal'
+	},
+	description: 'Portfolio of Ankit Seal, a full-stack developer specializing in React, Next.js, TypeScript, Node.js, and DevOps. Explore innovative projects, technical expertise, and digital solutions.',
+	keywords: [
+		'Ankit Seal',
+		'Full Stack Developer',
+		'Portfolio',
+		'Web Development',
+		'Linux',
+		'React',
+		'Next.js',
+		'TypeScript',
+		'Node.js',
+		'Frontend Developer',
+		'Backend Developer',
+		'DevOps Engineer',
+		'JavaScript Developer',
+		'Software Engineer',
+		'ankitseal.in',
+		'Web Designer'
+	],
+	authors: [{ name: 'Ankit Seal', url: 'https://ankitseal.in' }],
 	creator: 'Ankit Seal',
 	publisher: 'Ankit Seal',
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
 	metadataBase: new URL('https://ankitseal.in'),
 	alternates: {
 		canonical: 'https://ankitseal.in',
@@ -30,24 +55,24 @@ export const metadata: Metadata = {
 		locale: 'en_US',
 		url: 'https://ankitseal.in',
 		siteName: 'Ankit Seal Portfolio',
-		title: 'Ankit Seal - Full Stack Developer',
-		description: 'Portfolio showcasing web development projects and skills',
+		title: 'Ankit Seal - Full Stack Developer & Linux Enthusiast',
+		description: "Hi, I'm Ankit - a full-stack developer building modern web apps, tools, and digital experiences. Explore my projects and technical expertise.",
 		images: [
 			{
-				url: '/pfp.webp', // Your profile picture as OG image
-				width: 800,
-				height: 800,
-				alt: 'Ankit Seal',
-			},
-			`/api/og?title=${encodeURIComponent("Ankit Seal - Portfolio")}`
+				url: '/pfp.webp',
+				width: 1200,
+				height: 630,
+				alt: 'Ankit Seal - Full Stack Developer',
+			}
 		],
 	},
 	twitter: {
 		card: 'summary_large_image',
+		site: '@seal_ankit17027',
+		creator: '@seal_ankit17027',
 		title: 'Ankit Seal - Full Stack Developer',
-		description: 'Portfolio showcasing web development projects and skills',
+		description: 'Portfolio showcasing web development projects, skills, and innovative digital solutions',
 		images: ['/pfp.webp'],
-		creator: '@seal_ankit17027', // Add your Twitter handle if you have one
 	},
 	robots: {
 		index: true,
