@@ -8,16 +8,6 @@ import { ArrowLeft, Github, ExternalLink, Code2, Zap, Shield, Users } from 'luci
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const metadata: Metadata = {
-	title: 'ModChat - Real-time Chat Application',
-	description: 'ModChat is a feature-rich real-time chat application built with React, Node.js, Socket.io, and MongoDB. Explore the technical implementation, challenges, and solutions.',
-	openGraph: {
-		title: 'ModChat - Real-time Chat App by Ankit Seal',
-		description: 'A powerful real-time messaging platform with modern UI, built using React and Socket.io.',
-		images: ['/projects/modchat.png'],
-	},
-};
-
 export default function ModChatPage() {
 	const techStack = [
 		'React',
