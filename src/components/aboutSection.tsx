@@ -5,9 +5,6 @@ import { PixelatedCanvas } from "./ui/pixelated-canvas";
 import { Lens } from "./ui/lens";
 import { useState } from "react";
 
-import Navbar from "./navbar";
-// WARN: Remove interactive false to make it interactive
-
 import KolkataTime from "./kolkata-time";
 import { MapPin } from "lucide-react";
 import { Mars } from "lucide-react";
@@ -139,7 +136,6 @@ export default function AboutSection() {
 							jitterSpeed={3}
 							fadeOnLeave
 							maxFps={30}
-							interactive={false}
 						/>
 					</Lens>
 				</div>
