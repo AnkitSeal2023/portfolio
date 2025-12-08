@@ -171,7 +171,18 @@ type ToolItem = {
 
 export default function AboutSection() {
 	const [hovering, setHovering] = useState(false);
+	const [windowWidth, setWindowWidth] = useState(0);
 
+	// Track window width
+	useEffect(() => {
+		const updateWidth = () => setWindowWidth(window.innerWidth);
+		updateWidth(); // Set initial width
+		window.addEventListener("resize", updateWidth);
+		return () => window.removeEventListener("resize", updateWidth);
+	}, []);
+
+	// Responsive values based on screen width
+	const isMobile = windowWidth < 768; // Tailwind 'md' breakpoint
 	return (
 		<section id="about" className="scroll-mt-20 ">
 			<h2 className="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
@@ -201,6 +212,9 @@ export default function AboutSection() {
 							jitterSpeed={3}
 							fadeOnLeave
 							maxFps={30}
+							{...(isMobile
+								? { interactive: false }
+								: { interactive: true })}
 						/>
 					</Lens>
 				</div>
