@@ -51,7 +51,7 @@ export function RevealAceternityOnHover() {
 		<motion.div
 			className="cursor-default flex items-center  p-0.5 gap-1 aspect-square dark:bg-neutral-800 bg-neutral-100 rounded-full overflow-hidden border "
 			initial={{ width: "1.5rem", height: "1.5rem" }} // only icon width
-			whileHover={{ width: "4.5rem" }} // expands to show text
+			whileHover={{ width: "6.5rem" }} // expands to show text
 			transition={{ type: "tween" }}
 		>
 			{/* Icon */}
@@ -71,7 +71,7 @@ export function RevealAceternityOnHover() {
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ duration: 0.3 }}
 			>
-				Aceternity
+				Aceternity UI
 			</motion.span>
 		</motion.div>
 	);

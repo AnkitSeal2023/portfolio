@@ -14,6 +14,7 @@ import LoadingScreen from "@/components/loading-screen";
 import Projects from "@/components/projects/projects";
 import AboutSection from "@/components/aboutSection";
 import "lenis/dist/lenis.css";
+import Contact from "@/components/contact";
 export default function Page() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [resourcesReady, setResourcesReady] = useState({
@@ -196,7 +197,7 @@ export default function Page() {
 			/>
 			<LoadingScreen isLoading={isLoading} />
 
-			<div className="font-sans relative flex w-full items-center justify-center bg-neutral-50 dark:bg-neutral-950">
+			<div className="font-sans relative flex w-full items-center justify-center bg-neutral-50 dark:bg-neutral-950 selection:bg-neutral-300 dark:selection:bg-neutral-700">
 				<div
 					className={cn(
 						"absolute inset-0",
@@ -287,6 +288,7 @@ export default function Page() {
 						<SpotifyLastPlayedToast />
 						<Projects />
 						<AboutSection />
+						<Contact />
 					</div>
 				</div>
 			</div>

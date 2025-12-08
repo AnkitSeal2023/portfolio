@@ -62,11 +62,11 @@ export default function KolkataTime() {
 	}
 
 	return (
-		<div className="inline-flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 font-mono">
+		<div className="group inline-flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 font-mono">
 			<div className="rounded-lg p-0.5 border border-0.5 border-neutral-400 dark:border-neutral-600">
 				<Clock
 					size={18}
-					className="	 dark:bg-neutral-800 bg-neutral-200 p-0.5 rounded-md items-center dark:stroke-neutral-400"
+					className="	group-hover:animate-pulse dark:bg-neutral-800 bg-neutral-200 p-0.5 rounded-md items-center dark:stroke-neutral-400"
 				/>
 			</div>
 
