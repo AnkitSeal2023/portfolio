@@ -247,14 +247,9 @@ export default function Page() {
 						></div>
 						<div className="flex space-x-3">
 							<ResumeCard />
-							<div
+							<a
 								className="flex justify-center h-9 text-center text-sm"
-								onClick={() =>
-									window.open(
-										"https://www.linkedin.com/in/ankit-seal-26358328a/",
-										"_blank",
-									)
-								}
+								href="/#contact"
 							>
 								<div
 									onMouseEnter={triggerContactAnimation}
@@ -282,7 +277,7 @@ export default function Page() {
 										</div>
 									</HoverBorderGradient>
 								</div>
-							</div>
+							</a>
 						</div>
 						<AnimatedTooltipPreview />
 						<SpotifyLastPlayedToast />
