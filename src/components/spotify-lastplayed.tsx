@@ -2,18 +2,20 @@
 import React from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
+import Tooltip from "@mui/material/Tooltip";
+import ArrowTooltip from "./ui/tooltip";
 
 const spotify_elements = {
 	src: `/spotify_played.jpeg`,
 	song_name: "Save Your Tears (Remix) (with Ariana Grande)",
 	artist_name: "The Weeknd, Ariana Grande",
-}
+};
 
 export function SpotifyLastPlayedToast() {
-
 	return (
 		<div className="w-full border dark:border-transparent relative inline-flex overflow-hidden rounded-md p-px focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-			<span className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite]
+			<span
+				className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite]
 							bg-[conic-gradient(from_0deg_at_50%_50%,white_0%,white_95%,#25d865_100%)]
 							dark:bg-[conic-gradient(from_0deg_at_50%_50%,#0a0a0a_0%,#0a0a0a_95%,#25d865_100%)]"
 			/>
@@ -37,28 +39,50 @@ export function SpotifyLastPlayedToast() {
 								alt="Spotify Logo"
 								width={20}
 								height={20}
-								className="bg-neutral-800 rounded-sm p-0.5"
+								className="hover:animate-spin bg-neutral-800 rounded-sm p-0.5"
 							/>
-							<div className="text-xs flex items-center text-neutral-600 dark:text-neutral-400 font-medium">Last Played</div>
+							<div className="text-xs flex items-center text-neutral-600 dark:text-neutral-400 font-medium">
+								Last Played
+							</div>
 						</div>
 						<div className="flex-col flex  ">
-							<span className="text-sm font-semibold hover:underline cursor-pointer"
-									onClick={() => window.open("https://open.spotify.com/track/1oFAF1hdPOickyHgbuRjyX", "_blank")}
-							>{spotify_elements.song_name}</span>
-							<span className="text-xs text-neutral-600 dark:text-neutral-400">by {spotify_elements.artist_name}</span>
+							<span
+								className="text-sm font-semibold hover:underline cursor-pointer"
+								onClick={() =>
+									window.open(
+										"https://open.spotify.com/track/1oFAF1hdPOickyHgbuRjyX",
+										"_blank",
+									)
+								}
+							>
+								{spotify_elements.song_name}
+							</span>
+							<span className="text-xs text-neutral-600 dark:text-neutral-400">
+								by {spotify_elements.artist_name}
+							</span>
 						</div>
 					</div>
 				</div>
-				<div className="cursor-pointer flex justify-center items-center dark:bg-neutral-900 text-white
+				<div
+					className="cursor-pointer flex justify-center items-center dark:bg-neutral-900 text-white
 								dark:shadow-[inset_0_3px_8px_rgba(255,255,255,0.08),inset_0_-3px_8px_rgba(0,0,0,0.6)]
 								shadow-[inset_0_3px_8px_rgba(255,255,255,0.08),inset_0_-3px_8px_rgba(0,0,0,0.2)]
 								border dark:border-neutral-800 rounded-md"
-								onClick={() => window.open("https://open.spotify.com/track/1oFAF1hdPOickyHgbuRjyX", "_blank")}
-								>
-					<Play className="m-2 stroke-2 stroke-neutral-800 dark:stroke-neutral-300" size={16} />
+					onClick={() =>
+						window.open(
+							"https://open.spotify.com/track/1oFAF1hdPOickyHgbuRjyX",
+							"_blank",
+						)
+					}
+				>
+					<ArrowTooltip title="Play on Spotify">
+						<Play
+							className="m-2 stroke-2 stroke-neutral-800 dark:stroke-neutral-300"
+							size={16}
+						/>
+					</ArrowTooltip>
 				</div>
-
 			</div>
 		</div>
-	)
+	);
 }

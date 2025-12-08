@@ -1,37 +1,55 @@
-'use client';
-
+"use client";
+import { ReactLenis, useLenis } from "lenis/react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import Navbar from '@/components/navbar';
-import { Code2, Database, Layers, Terminal, Globe, Sparkles } from 'lucide-react';
+import Navbar from "@/components/navbar";
+import {
+	Code2,
+	Database,
+	Layers,
+	Terminal,
+	Globe,
+	Sparkles,
+} from "lucide-react";
+import { PixelatedCanvas } from "@/components/ui/pixelated-canvas";
 
 export default function AboutPage() {
 	const skills = {
-		frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-		backend: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'REST APIs'],
-		tools: ['Git', 'Docker', 'Linux', 'VS Code', 'Figma'],
+		frontend: [
+			"React",
+			"Next.js",
+			"TypeScript",
+			"Tailwind CSS",
+			"Framer Motion",
+		],
+		backend: ["Node.js", "Python", "PostgreSQL", "MongoDB", "REST APIs"],
+		tools: ["Git", "Docker", "Linux", "VS Code", "Figma"],
 	};
 
 	const timeline = [
 		{
-			year: '2023',
-			title: 'Started Learning Web Development',
-			description: 'Began my journey into full-stack development, learning HTML, CSS, and JavaScript fundamentals.',
+			year: "2023",
+			title: "Started Learning Web Development",
+			description:
+				"Began my journey into full-stack development, learning HTML, CSS, and JavaScript fundamentals.",
 		},
 		{
-			year: '2024',
-			title: 'Dove into Modern Frameworks',
-			description: 'Mastered React, Next.js, and TypeScript. Built multiple full-stack projects and contributed to open source.',
+			year: "2024",
+			title: "Dove into Modern Frameworks",
+			description:
+				"Mastered React, Next.js, and TypeScript. Built multiple full-stack projects and contributed to open source.",
 		},
 		{
-			year: '2025',
-			title: 'Building & Shipping',
-			description: 'Currently focused on creating polished web applications and exploring new technologies like AI integration.',
+			year: "2025",
+			title: "Building & Shipping",
+			description:
+				"Currently focused on creating polished web applications and exploring new technologies like AI integration.",
 		},
 	];
 
 	return (
-		<div className='relative flex w-full items-center justify-center bg-neutral-50 dark:bg-neutral-950'>
+		<div className="relative flex w-full items-center justify-center bg-neutral-50 dark:bg-neutral-950">
+			<ReactLenis root />
 			{/* Grid background */}
 			<div
 				className={cn(
@@ -40,12 +58,30 @@ export default function AboutPage() {
 					"bg-size-[20px_20px]",
 					"bg-[radial-gradient(#d4d4d4_1px,transparent_1px)]",
 					"dark:bg-[radial-gradient(#404040_1px,transparent_1px)]",
-				)} />
+				)}
+			/>
 			<div className="z-0 pointer-events-none absolute inset-0 flex items-center justify-center bg-white mask-[radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
 
 			<Navbar isSubPage={true} />
 
 			<div className="z-10 h-full max-w-3xl w-full px-5 py-24">
+				<PixelatedCanvas
+					src={"/pixel_art.jpg"}
+					width={250}
+					dotScale={1}
+					height={250}
+					className="rounded-lg"
+					cellSize={3}
+					shape="circle"
+					dropoutStrength={0.01}
+					distortionMode="swirl"
+					tintColor="transparent"
+					responsive
+					jitterStrength={4}
+					jitterSpeed={4}
+					fadeOnLeave
+					maxFps={30}
+				/>
 				{/* Header */}
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -69,19 +105,24 @@ export default function AboutPage() {
 					className="mt-12 space-y-4 text-neutral-700 dark:text-neutral-300"
 				>
 					<p>
-						I'm Ankit, a full-stack developer who loves building things for the web.
-						I started coding because I was curious about how websites worked, and that
-						curiosity turned into a genuine passion for creating digital experiences.
+						I'm Ankit, a full-stack developer who loves building
+						things for the web. I started coding because I was
+						curious about how websites worked, and that curiosity
+						turned into a genuine passion for creating digital
+						experiences.
 					</p>
 					<p>
-						When I'm not coding, you'll find me tweaking my Linux setup (yes, I'm that person),
-						exploring new frameworks, or diving into open-source projects. I believe in writing
-						clean, maintainable code and designing interfaces that people actually enjoy using.
+						When I'm not coding, you'll find me tweaking my Linux
+						setup (yes, I'm that person), exploring new frameworks,
+						or diving into open-source projects. I believe in
+						writing clean, maintainable code and designing
+						interfaces that people actually enjoy using.
 					</p>
 					<p>
-						I'm currently focused on building modern web applications with React and Next.js,
-						while also exploring backend development and DevOps practices. Always learning,
-						always building.
+						I'm currently focused on building modern web
+						applications with React and Next.js, while also
+						exploring backend development and DevOps practices.
+						Always learning, always building.
 					</p>
 				</motion.div>
 
@@ -107,7 +148,10 @@ export default function AboutPage() {
 							</div>
 							<ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
 								{skills.frontend.map((skill) => (
-									<li key={skill} className="flex items-center gap-2">
+									<li
+										key={skill}
+										className="flex items-center gap-2"
+									>
 										<span className="size-1.5 rounded-full bg-neutral-400 dark:bg-neutral-600" />
 										{skill}
 									</li>
@@ -125,7 +169,10 @@ export default function AboutPage() {
 							</div>
 							<ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
 								{skills.backend.map((skill) => (
-									<li key={skill} className="flex items-center gap-2">
+									<li
+										key={skill}
+										className="flex items-center gap-2"
+									>
 										<span className="size-1.5 rounded-full bg-neutral-400 dark:bg-neutral-600" />
 										{skill}
 									</li>
@@ -143,7 +190,10 @@ export default function AboutPage() {
 							</div>
 							<ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
 								{skills.tools.map((skill) => (
-									<li key={skill} className="flex items-center gap-2">
+									<li
+										key={skill}
+										className="flex items-center gap-2"
+									>
 										<span className="size-1.5 rounded-full bg-neutral-400 dark:bg-neutral-600" />
 										{skill}
 									</li>
@@ -170,7 +220,10 @@ export default function AboutPage() {
 								key={item.year}
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
-								transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+								transition={{
+									duration: 0.5,
+									delay: 0.4 + index * 0.1,
+								}}
 								className="flex gap-6"
 							>
 								<div className="flex flex-col items-center">
@@ -209,19 +262,22 @@ export default function AboutPage() {
 							<div className="flex items-start gap-3">
 								<Sparkles className="size-5 text-neutral-600 dark:text-neutral-400 shrink-0 mt-0.5" />
 								<p>
-									Building full-stack applications with Next.js and exploring AI integrations
+									Building full-stack applications with
+									Next.js and exploring AI integrations
 								</p>
 							</div>
 							<div className="flex items-start gap-3">
 								<Globe className="size-5 text-neutral-600 dark:text-neutral-400 shrink-0 mt-0.5" />
 								<p>
-									Contributing to open-source projects and learning from the developer community
+									Contributing to open-source projects and
+									learning from the developer community
 								</p>
 							</div>
 							<div className="flex items-start gap-3">
 								<Layers className="size-5 text-neutral-600 dark:text-neutral-400 shrink-0 mt-0.5" />
 								<p>
-									Deepening my understanding of system design and scalable architecture
+									Deepening my understanding of system design
+									and scalable architecture
 								</p>
 							</div>
 						</div>

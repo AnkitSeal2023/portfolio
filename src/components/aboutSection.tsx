@@ -1,21 +1,25 @@
 // small about section inside main page:
 
 import Image from "next/image";
+import Link from "next/link";
 import { PixelatedCanvas } from "./ui/pixelated-canvas";
 import { Lens } from "./ui/lens";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import KolkataTime from "./kolkata-time";
 import { MapPin } from "lucide-react";
 import { Mars } from "lucide-react";
+import ArrowTooltip from "./ui/tooltip";
 
 function MyLocation() {
 	return (
 		<div className="flex items-center gap-1">
-			<MapPin
-				size={22}
-				className="bg-neutral-800 p-0.5 rounded-md items-center stroke-neutral-400"
-			/>
+			<div className="rounded-lg p-0.5 border border-0.5 border-neutral-400 dark:border-neutral-600">
+				<MapPin
+					size={18}
+					className="	 dark:bg-neutral-800 bg-neutral-200 p-0.5 rounded-md items-center dark:stroke-neutral-400"
+				/>
+			</div>
 			<span className="text-neutral-600 dark:text-neutral-400 font-mono text-sm inline-flex">
 				Kolkata, India{" "}
 			</span>
@@ -26,10 +30,12 @@ function MyLocation() {
 function MyGender() {
 	return (
 		<div className="flex items-center gap-1">
-			<Mars
-				size={22}
-				className="bg-neutral-800 p-0.5 rounded-md items-center stroke-neutral-400"
-			/>
+			<div className="rounded-lg p-0.5 border border-0.5 border-neutral-400 dark:border-neutral-600">
+				<Mars
+					size={18}
+					className="	 dark:bg-neutral-800 bg-neutral-200 p-0.5 rounded-md items-center dark:stroke-neutral-400"
+				/>
+			</div>
 			<span className="text-neutral-600 dark:text-neutral-400 font-mono text-sm inline-flex">
 				he/him{" "}
 			</span>
@@ -40,69 +46,128 @@ function MyGender() {
 function ToolsUsed() {
 	return (
 		<div className="flex space-x-1">
-			<Image
-				src={"/js.png"}
-				width={20}
-				height={20}
-				alt="JavaScript Logo"
-			/>
-			<Image
-				src={"/ts.png"}
-				width={20}
-				height={20}
-				alt="TypeScript Logo"
-			/>
-			<Image src={"/go.svg"} width={20} height={20} alt="GO Logo" />
-			<Image
-				src={"/htmx.svg"}
-				width={20}
-				height={20}
-				alt="HTMX Logo"
-				className="bg-neutral-300 rounded-md"
-			/>
-			<Image
-				src={
-					"https://zed.dev/_next/static/media/stable-app-logo.9b5f959f.png"
-				}
-				width={20}
-				height={20}
-				alt="ZED Logo"
-			/>
-			<Image
-				src={"/next.png"}
-				width={20}
-				height={20}
-				alt="NextJS Logo"
-				className="bg-white rounded-md"
-			/>
-			<Image
-				src={"/aceternity.png"}
-				width={20}
-				height={20}
-				alt="Aceternity Logo"
-			/>
-			<Image
-				src={"/expressjs.svg"}
-				width={20}
-				height={20}
-				alt="ExpressJS Logo"
-				className="bg-yellow-300 rounded-md p-0.5"
-			/>
-			<Image
-				src={"https://cdn-icons-png.flaticon.com/512/5968/5968705.png"}
-				width={20}
-				height={20}
-				alt="Figma Logo"
-			/>
-			<Image
-				src={"https://cdn-icons-png.flaticon.com/512/6124/6124995.png"}
-				width={20}
-				height={20}
-				alt="Linux Logo"
-			/>
+			<ArrowTooltip title="JavaScript">
+				<Link
+					href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+					target="_blank"
+				>
+					<Image
+						src={"/js.png"}
+						width={20}
+						height={20}
+						alt="JavaScript Logo"
+					/>
+				</Link>
+			</ArrowTooltip>
+			<ArrowTooltip title="TypeScript">
+				<Link href="https://www.typescriptlang.org/" target="_blank">
+					<Image
+						src={"/ts.png"}
+						width={20}
+						height={20}
+						alt="TypeScript Logo"
+					/>
+				</Link>
+			</ArrowTooltip>
+			<ArrowTooltip title="GO">
+				<Link href="https://golang.org/" target="_blank">
+					<Image
+						src={"/go.svg"}
+						width={20}
+						height={20}
+						alt="GO Logo"
+					/>
+				</Link>
+			</ArrowTooltip>
+			<ArrowTooltip title="HTMX">
+				<Link href="https://htmx.org/" target="_blank">
+					<Image
+						src={"/htmx.svg"}
+						width={20}
+						height={20}
+						alt="HTMX Logo"
+						className="bg-neutral-300 rounded-md"
+					/>
+				</Link>
+			</ArrowTooltip>
+			<ArrowTooltip title="ZED Editor">
+				<Link href="https://zed.dev/" target="_blank">
+					<Image
+						src={
+							"https://zed.dev/_next/static/media/stable-app-logo.9b5f959f.png"
+						}
+						width={20}
+						height={20}
+						alt="ZED Logo"
+					/>
+				</Link>
+			</ArrowTooltip>
+			<ArrowTooltip title="NextJS">
+				<Link href="https://nextjs.org/" target="_blank">
+					<Image
+						src={"/next.png"}
+						width={20}
+						height={20}
+						alt="NextJS Logo"
+						className="bg-white rounded-md"
+					/>
+				</Link>
+			</ArrowTooltip>
+			<ArrowTooltip title="Aceternity UI">
+				<Link href="https://ui.aceternity.com/" target="_blank">
+					<Image
+						src={"/aceternity.png"}
+						width={20}
+						height={20}
+						alt="Aceternity Logo"
+					/>
+				</Link>
+			</ArrowTooltip>
+			<ArrowTooltip title="ExpressJS">
+				<Link href="https://expressjs.com/" target="_blank">
+					<Image
+						src={"/expressjs.svg"}
+						width={20}
+						height={20}
+						alt="ExpressJS Logo"
+						className="bg-yellow-300 rounded-md p-0.5"
+					/>
+				</Link>
+			</ArrowTooltip>
+			<ArrowTooltip title="Figma">
+				<Link href="https://www.figma.com/" target="_blank">
+					<Image
+						src={
+							"https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
+						}
+						width={20}
+						height={20}
+						alt="Figma Logo"
+					/>
+				</Link>
+			</ArrowTooltip>
+			<ArrowTooltip title="Linux (arch btw)">
+				<Link href="https://www.linux.org/" target="_blank">
+					<Image
+						src={
+							"https://cdn-icons-png.flaticon.com/512/6124/6124995.png"
+						}
+						width={20}
+						height={20}
+						alt="Linux Logo"
+					/>
+				</Link>
+			</ArrowTooltip>
 		</div>
 	);
 }
+type ToolItem = {
+	id: number;
+	name: string;
+	designation: string;
+	image: string;
+	url: string;
+};
 
 export default function AboutSection() {
 	const [hovering, setHovering] = useState(false);
@@ -147,7 +212,7 @@ export default function AboutSection() {
 						<KolkataTime />
 						<MyLocation />
 						<MyGender />
-						<span className="font-mono font-semibold text-neutral-200">
+						<span className="font-mono font-semibold text-neutral-600 dark:text-neutral-200">
 							Tools used:
 						</span>
 						<ToolsUsed />
@@ -161,7 +226,7 @@ export default function AboutSection() {
 						<a
 							href="https://nextjs.org/"
 							target="_blank"
-							className="inline-flex items-center whitespace-nowrap bg-neutral-300 dark:bg-neutral-900 font-mono border border-neutral-500	 rounded-md p-0.5 border-dashed"
+							className="inline-flex items-center whitespace-nowrap bg-neutral-200 dark:bg-neutral-900 font-mono border border-neutral-500	 rounded-md p-0.5 border-dashed"
 						>
 							<Image
 								className="inline-block bg-white rounded-full"
@@ -176,7 +241,7 @@ export default function AboutSection() {
 						<a
 							href="https://www.typescriptlang.org/"
 							target="_blank"
-							className="inline-flex items-center whitespace-nowrap bg-neutral-300 dark:bg-neutral-900 font-mono border border-neutral-500	 rounded-md p-0.5 border-dashed"
+							className="inline-flex items-center whitespace-nowrap bg-neutral-200 dark:bg-neutral-900 font-mono border border-neutral-500	 rounded-md p-0.5 border-dashed"
 						>
 							<Image
 								className="inline-block bg-white rounded-full"
@@ -191,7 +256,7 @@ export default function AboutSection() {
 						<a
 							href="https://nodejs.org/"
 							target="_blank"
-							className="mt-0.5 inline-flex items-center whitespace-nowrap bg-neutral-300 dark:bg-neutral-900 font-mono border border-neutral-500	 rounded-md p-0.5 border-dashed"
+							className="mt-0.5 inline-flex items-center whitespace-nowrap bg-neutral-200 dark:bg-neutral-900 font-mono border border-neutral-500	 rounded-md p-0.5 border-dashed"
 						>
 							<Image
 								className="inline-block rounded-full"
@@ -208,7 +273,7 @@ export default function AboutSection() {
 						<a
 							href="https://golang.org/"
 							target="_blank"
-							className="mt-0.5 inline-flex items-center whitespace-nowrap bg-neutral-300 dark:bg-neutral-900 font-mono border border-neutral-500	 rounded-md p-0.5 border-dashed"
+							className="mt-0.5 inline-flex items-center whitespace-nowrap bg-neutral-200 dark:bg-neutral-900 font-mono border border-neutral-500	 rounded-md p-0.5 border-dashed"
 						>
 							<Image
 								className="inline-block rounded-full"

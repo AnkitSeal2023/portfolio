@@ -63,10 +63,12 @@ export default function KolkataTime() {
 
 	return (
 		<div className="inline-flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 font-mono">
-			<Clock
-				size={22}
-				className="bg-neutral-800 p-0.5 rounded-md items-center stroke-neutral-400"
-			/>
+			<div className="rounded-lg p-0.5 border border-0.5 border-neutral-400 dark:border-neutral-600">
+				<Clock
+					size={18}
+					className="	 dark:bg-neutral-800 bg-neutral-200 p-0.5 rounded-md items-center dark:stroke-neutral-400"
+				/>
+			</div>
 
 			<span className="inline-flex">
 				{kolkataTime}{" "}

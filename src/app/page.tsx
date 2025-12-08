@@ -1,19 +1,19 @@
-'use client';
-import Lenis from 'lenis'
+"use client";
+import Lenis from "lenis";
 import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Send } from 'lucide-react';
-import Navbar from '@/components/navbar';
-import HobbiesList from '@/components/hobbies';
-import { AnimatedTooltipPreview } from '@/components/mylinks';
-import { ResumeCard } from '@/components/resume-button';
-import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
-import { SpotifyLastPlayedToast } from '@/components/spotify-lastplayed';
-import LoadingScreen from '@/components/loading-screen';
-import Projects from '@/components/projects/projects';
-import AboutSection from '@/components/aboutSection';
-
+import { Send } from "lucide-react";
+import Navbar from "@/components/navbar";
+import HobbiesList from "@/components/hobbies";
+import { AnimatedTooltipPreview } from "@/components/mylinks";
+import { ResumeCard } from "@/components/resume-button";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { SpotifyLastPlayedToast } from "@/components/spotify-lastplayed";
+import LoadingScreen from "@/components/loading-screen";
+import Projects from "@/components/projects/projects";
+import AboutSection from "@/components/aboutSection";
+import "lenis/dist/lenis.css";
 export default function Page() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [resourcesReady, setResourcesReady] = useState({
@@ -61,7 +61,7 @@ export default function Page() {
 
 		// Mark Lenis as ready after a brief initialization
 		const lenisReadyTimer = setTimeout(() => {
-			setResourcesReady(prev => ({ ...prev, lenis: true }));
+			setResourcesReady((prev) => ({ ...prev, lenis: true }));
 		}, 100);
 
 		return () => {
@@ -73,32 +73,32 @@ export default function Page() {
 
 	// Check document ready state
 	useEffect(() => {
-		if (document.readyState === 'complete') {
-			setResourcesReady(prev => ({ ...prev, document: true }));
+		if (document.readyState === "complete") {
+			setResourcesReady((prev) => ({ ...prev, document: true }));
 		} else {
 			const handleLoad = () => {
-				setResourcesReady(prev => ({ ...prev, document: true }));
+				setResourcesReady((prev) => ({ ...prev, document: true }));
 			};
-			window.addEventListener('load', handleLoad);
-			return () => window.removeEventListener('load', handleLoad);
+			window.addEventListener("load", handleLoad);
+			return () => window.removeEventListener("load", handleLoad);
 		}
 	}, []);
 
 	// Check fonts loaded
 	useEffect(() => {
-		if (typeof document !== 'undefined' && 'fonts' in document) {
+		if (typeof document !== "undefined" && "fonts" in document) {
 			document.fonts.ready.then(() => {
-				setResourcesReady(prev => ({ ...prev, fonts: true }));
+				setResourcesReady((prev) => ({ ...prev, fonts: true }));
 			});
 		} else {
 			// Fallback if fonts API not available
-			setResourcesReady(prev => ({ ...prev, fonts: true }));
+			setResourcesReady((prev) => ({ ...prev, fonts: true }));
 		}
 	}, []);
 
 	// Preload critical images (profile picture)
 	useEffect(() => {
-		const imagesToPreload = ['/pfp.webp'];
+		const imagesToPreload = ["/pfp.webp"];
 		let loadedCount = 0;
 
 		const imagePromises = imagesToPreload.map((src) => {
@@ -107,7 +107,10 @@ export default function Page() {
 				img.onload = () => {
 					loadedCount++;
 					if (loadedCount === imagesToPreload.length) {
-						setResourcesReady(prev => ({ ...prev, images: true }));
+						setResourcesReady((prev) => ({
+							...prev,
+							images: true,
+						}));
 					}
 					resolve();
 				};
@@ -115,7 +118,10 @@ export default function Page() {
 					// Still mark as complete even on error to prevent infinite loading
 					loadedCount++;
 					if (loadedCount === imagesToPreload.length) {
-						setResourcesReady(prev => ({ ...prev, images: true }));
+						setResourcesReady((prev) => ({
+							...prev,
+							images: true,
+						}));
 					}
 					resolve();
 				};
@@ -165,31 +171,32 @@ export default function Page() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "Person",
-						"name": "Ankit Seal",
-						"url": "https://ankitseal.in",
-						"image": "https://ankitseal.in/pfp.webp",
-						"jobTitle": "Full Stack Developer",
-						"description": "Full-stack developer specializing in React, Next.js, TypeScript, Node.js, and DevOps",
-						"sameAs": [
+						name: "Ankit Seal",
+						url: "https://ankitseal.in",
+						image: "https://ankitseal.in/pfp.webp",
+						jobTitle: "Full Stack Developer",
+						description:
+							"Full-stack developer specializing in React, Next.js, TypeScript, Node.js, and DevOps",
+						sameAs: [
 							"https://github.com/ankitseal",
 							"https://linkedin.com/in/ankitseal",
-							"https://twitter.com/seal_ankit17027"
+							"https://twitter.com/seal_ankit17027",
 						],
-						"knowsAbout": [
+						knowsAbout: [
 							"React",
 							"Next.js",
 							"TypeScript",
 							"Node.js",
 							"Web Development",
 							"Linux",
-							"DevOps"
-						]
-					})
+							"DevOps",
+						],
+					}),
 				}}
 			/>
 			<LoadingScreen isLoading={isLoading} />
 
-			<div className='font-sans relative flex w-full items-center justify-center bg-neutral-50 dark:bg-neutral-950'>
+			<div className="font-sans relative flex w-full items-center justify-center bg-neutral-50 dark:bg-neutral-950">
 				<div
 					className={cn(
 						"absolute inset-0",
@@ -197,23 +204,28 @@ export default function Page() {
 						"bg-size-[20px_20px]",
 						"bg-[radial-gradient(#d4d4d4_1px,transparent_1px)]",
 						"dark:bg-[radial-gradient(#404040_1px,transparent_1px)]",
-					)} />
+					)}
+				/>
 				<div className="z-0 pointer-events-none absolute inset-0 flex items-center justify-center bg-white mask-[radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
 				<Navbar />
 
 				<div className="z-10 h-full max-w-3xl w-full px-5 py-18 relative">
-					<div className='flex items-center w-full'></div>
-					<div >
-						<div className='flex flex-col md:flex-row pt-40 text-neutral-900 dark:text-neutral-200 text-3xl overflow-visible'>
+					<div className="flex items-center w-full"></div>
+					<div>
+						<div className="flex flex-col md:flex-row pt-40 text-neutral-900 dark:text-neutral-200 text-3xl overflow-visible">
 							<h1 className="font-semibold mr-2">
 								Hi, I'm Ankit —
 							</h1>
 							<HobbiesList />
 						</div>
-						<h3 className='text-neutral-700 dark:text-neutral-400 font-normal py-7'>
-							I do the whole stack— <span className='font-mono'>frontend</span>, <span className='font-mono'>backend</span>, and the glue that holds them together on a good day.
+						<h3 className="text-neutral-700 dark:text-neutral-400 font-normal py-7">
+							I do the whole stack—{" "}
+							<span className="font-mono">frontend</span>,{" "}
+							<span className="font-mono">backend</span>, and the
+							glue that holds them together on a good day.
 						</h3>
-						<div className='
+						<div
+							className="
 						    z-10
 							bottom-0
 							-my-20
@@ -230,15 +242,24 @@ export default function Page() {
 							dark:from-neutral-950
 							dark:to-neutral-950/0
 							blur-2xl`
-						'></div>
+						"
+						></div>
 						<div className="flex space-x-3">
 							<ResumeCard />
-							<div className="flex justify-center h-9 text-center text-sm"
-								onClick={() => window.open("https://www.linkedin.com/in/ankit-seal-26358328a/", "_blank")}
+							<div
+								className="flex justify-center h-9 text-center text-sm"
+								onClick={() =>
+									window.open(
+										"https://www.linkedin.com/in/ankit-seal-26358328a/",
+										"_blank",
+									)
+								}
 							>
 								<div
 									onMouseEnter={triggerContactAnimation}
-									onTouchStartCapture={triggerContactAnimation}
+									onTouchStartCapture={
+										triggerContactAnimation
+									}
 								>
 									<HoverBorderGradient
 										containerClassName="rounded-md"
@@ -248,12 +269,14 @@ export default function Page() {
 										dark:bg-neutral-100 dark:text-neutral-900
 										py-4.5 rounded-md"
 									>
-										<motion.div animate={contactControls} className="rotate-10">
+										<motion.div
+											animate={contactControls}
+											className="rotate-10"
+										>
 											<Send className="size-4 mr-1 stroke-[1.7]" />
 										</motion.div>
 
-										<div className="text-xs font-medium"
-										>
+										<div className="text-xs font-medium">
 											Get in touch
 										</div>
 									</HoverBorderGradient>
