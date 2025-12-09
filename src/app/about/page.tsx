@@ -48,7 +48,7 @@ export default function AboutPage() {
 	];
 
 	return (
-		<div className="relative flex w-full items-center justify-center bg-neutral-50 dark:bg-neutral-950">
+		<div className="font-sans relative flex w-full items-center justify-center bg-neutral-50 dark:bg-neutral-950">
 			<ReactLenis root />
 			{/* Grid background */}
 			<div

@@ -55,7 +55,7 @@ export default function ContactPage() {
 	};
 
 	return (
-		<div className="relative flex w-full items-center justify-center bg-neutral-50 dark:bg-neutral-950 min-h-screen">
+		<div className="font-sans relative flex w-full items-center justify-center bg-neutral-50 dark:bg-neutral-950 min-h-screen">
 			{/* Grid background */}
 			<div
 				className={cn(

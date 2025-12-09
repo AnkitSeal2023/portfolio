@@ -21,8 +21,8 @@ function MyLocation() {
 					className="	group-hover:animate-pulse dark:bg-neutral-800 bg-neutral-200 p-0.5 rounded-md items-center dark:stroke-neutral-400"
 				/>
 			</div>
-			<span className="text-neutral-600 dark:text-neutral-400 font-mono text-sm inline-flex">
-				Kolkata, India{" "}
+			<span className="text-neutral-800 dark:text-neutral-300 font-mono text-sm inline-flex">
+				Kolkata, India 🇮🇳
 			</span>
 		</div>
 	);
