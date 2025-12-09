@@ -61,7 +61,7 @@ export const metadata: Metadata = {
 			"Hi, I'm Ankit - a full-stack developer building modern web apps, tools, and digital experiences. Explore my projects and technical expertise.",
 		images: [
 			{
-				url: "/pfp.webp",
+				url: "/api/og",
 				width: 1200,
 				height: 630,
 				alt: "Ankit Seal - Full Stack Developer",
