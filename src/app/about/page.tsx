@@ -97,11 +97,75 @@ export default function AboutPage() {
 					</p>
 				</motion.div>
 
-				{/* Bio Section */}
+				{/* Info Cards */}
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.1 }}
+					className="mt-12"
+				>
+					<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+						{/* Location */}
+						<div className="col-span-2 border border-neutral-200 dark:border-neutral-800 rounded-lg p-5 bg-linear-to-br from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all hover:shadow-md">
+							<div className="flex items-center gap-2 mb-2">
+								<Globe className="size-4 text-neutral-500 dark:text-neutral-400" />
+								<span className="text-xs font-mono uppercase tracking-wider text-neutral-500 dark:text-neutral-500">
+									Location
+								</span>
+							</div>
+							<div className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+								Kolkata, India 🇮🇳
+							</div>
+						</div>
+
+						{/* Age */}
+						<div className="border border-neutral-200 dark:border-neutral-800 rounded-lg p-5 bg-linear-to-br from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all hover:shadow-md">
+							<div className="flex items-center gap-2 mb-2">
+								<span className="text-xs font-mono uppercase tracking-wider text-neutral-500 dark:text-neutral-500">
+									Age
+								</span>
+							</div>
+							<div className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+								21
+							</div>
+						</div>
+
+						{/* Role */}
+						<div className="border border-neutral-200 dark:border-neutral-800 rounded-lg p-5 bg-linear-to-br from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all hover:shadow-md">
+							<div className="flex items-center gap-2 mb-2">
+								<Code2 className="size-4 text-neutral-500 dark:text-neutral-400" />
+								<span className="text-xs font-mono uppercase tracking-wider text-neutral-500 dark:text-neutral-500">
+									Role
+								</span>
+							</div>
+							<div className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+								Full Stack Dev
+							</div>
+						</div>
+
+						{/* Education */}
+						<div className="col-span-2 md:col-span-4 border border-neutral-200 dark:border-neutral-800 rounded-lg p-5 bg-linear-to-br from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all hover:shadow-md">
+							<div className="flex items-center gap-2 mb-2">
+								<Layers className="size-4 text-neutral-500 dark:text-neutral-400" />
+								<span className="text-xs font-mono uppercase tracking-wider text-neutral-500 dark:text-neutral-500">
+									Education
+								</span>
+							</div>
+							<div className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+								B.Tech in Computer Science & Engineering
+							</div>
+							<div className="text-sm text-neutral-600 dark:text-neutral-400 mt-1">
+								Currently in 3rd Year
+							</div>
+						</div>
+					</div>
+				</motion.div>
+
+				{/* Bio Section */}
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6, delay: 0.2 }}
 					className="mt-12 space-y-4 text-neutral-700 dark:text-neutral-300"
 				>
 					<p>
@@ -130,7 +194,7 @@ export default function AboutPage() {
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.2 }}
+					transition={{ duration: 0.6, delay: 0.3 }}
 					className="mt-16"
 				>
 					<h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-8">
@@ -207,7 +271,7 @@ export default function AboutPage() {
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.3 }}
+					transition={{ duration: 0.6, delay: 0.4 }}
 					className="mt-16"
 				>
 					<h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-8">
@@ -222,7 +286,7 @@ export default function AboutPage() {
 								animate={{ opacity: 1, x: 0 }}
 								transition={{
 									duration: 0.5,
-									delay: 0.4 + index * 0.1,
+									delay: 0.5 + index * 0.1,
 								}}
 								className="flex gap-6"
 							>
@@ -251,7 +315,7 @@ export default function AboutPage() {
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.6 }}
+					transition={{ duration: 0.6, delay: 0.8 }}
 					className="mt-16 mb-20"
 				>
 					<h2 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
