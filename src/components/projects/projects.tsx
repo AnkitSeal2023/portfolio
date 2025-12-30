@@ -4,7 +4,7 @@ export default function Projects() {
 	return (
 		<section
 			id="projects"
-			className="flex flex-col justify-center py-10 w-full"
+			className="flex flex-col justify-center py-10 w-full max-w-3xl z-18"
 		>
 			<h1 className="text-2xl font-bold mb-5">Projects</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 md:space-x-2">
