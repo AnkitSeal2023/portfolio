@@ -22,7 +22,7 @@ export function ResumeCard() {
 	return (
 		<div className="flex justify-center h-9 text-center font-sm"
 			  onClick={()=>{
-				 window.open("https://drive.google.com/file/d/1TBaT1faLd6HBCzsElK8JX_liDsnzwrHb/view?usp=sharing", "_blank")
+				 window.open("https://drive.google.com/file/d/1VIz4SUIG5KBV2ulk4o2gkELlTiuK72Fv/view?usp=sharing", "_blank")
 			  }}
 		>
 			<div
