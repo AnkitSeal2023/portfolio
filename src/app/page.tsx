@@ -208,6 +208,11 @@ export default function Page() {
 					)}
 				/>
 				<div className="z-0 pointer-events-none absolute inset-0 flex items-center justify-center bg-white mask-[radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+
+				<div className="hidden lg:block absolute top-2/3 right-8 text-neutral-300 dark:text-neutral-700 font-mono text-xs pointer-events-none rotate-90 origin-right select-none z-0">
+					{"async function load() { await magic(); }"}
+				</div>
+
 				<Navbar />
 
 				<div className="z-10 h-full max-w-3xl w-full px-5 py-18 relative">
@@ -284,6 +289,9 @@ export default function Page() {
 						<Projects />
 						<AboutSection />
 						<Contact />
+						<div className="absolute text-neutral-300 dark:text-neutral-700 font-mono text-xs pointer-events-none right-5 select-none z-0">
+							{"<Inspiration src='ramx.in'/>"}
+						</div>
 					</div>
 				</div>
 			</div>
