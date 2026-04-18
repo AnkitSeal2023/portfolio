@@ -5,7 +5,7 @@ export async function POST(req: Request) {
 	await connectDB(); // ensures one connection globally
 
 	const body = await req.json();
-
+console.log("Received body:", body);
 	try {
 		const user = await User.create({
 			name: body.name,
@@ -19,6 +19,7 @@ export async function POST(req: Request) {
 		});
 	} catch (err: any) {
 		if (err?.code === 11000) {
+			console.error("Duplicate key error", err.keyValue);
 			return new Response(
 				JSON.stringify({
 					error: "Duplicate key error",

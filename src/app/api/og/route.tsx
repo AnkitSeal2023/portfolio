@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-// Utility to fetch Google Fonts as ArrayBuffer for Edge
 async function loadGoogleFont(font: string, text: string) {
 	const url = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(text)}`;
 	const css = await (await fetch(url)).text();
@@ -23,7 +22,7 @@ export const config = {
 
 export async function GET() {
 	const interFont = await loadGoogleFont("Inter", "Ankit Seal");
-	const imageUrl = "https://github.com/AnkitSeal2023.png"; // Your profile picture URL
+	const imageUrl = "https://github.com/AnkitSeal2023.png";
 	const title = "Ankit Seal";
 	const description =
 		"Portfolio of Ankit Seal, a full-stack developer specializing in frontend, backend, and DevOps. View my projects, resume, and get in touch.";
