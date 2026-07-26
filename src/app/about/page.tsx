@@ -118,7 +118,7 @@ export default function AboutPage() {
 			{
 				name: "Zed Editor",
 				url: "https://zed.dev/",
-				image: "https://zed.dev/_next/static/media/stable-app-logo.9b5f959f.png",
+				image: "/zed_icon.png",
 				description:
 					"A lightweight, powerful code editor with extensive extensions for development.",
 			},

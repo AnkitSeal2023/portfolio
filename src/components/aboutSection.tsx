@@ -95,7 +95,7 @@ function ToolsUsed() {
 				<Link href="https://zed.dev/" target="_blank">
 					<Image
 						src={
-							"https://zed.dev/_next/static/media/stable-app-logo.9b5f959f.png"
+							"/zed_icon.png"
 						}
 						width={20}
 						height={20}
