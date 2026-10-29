@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
 import Tooltip from "@mui/material/Tooltip";
 import ArrowTooltip from "./ui/tooltip";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const spotify_elements = {
 	src: `/spotify_played.jpeg`,
@@ -12,6 +13,8 @@ const spotify_elements = {
 };
 
 export function SpotifyLastPlayedToast() {
+	const [isImageLoaded, setIsImageLoaded] = useState(false);
+	const [isSpotifyLogoLoaded, setIsSpotifyLogoLoaded] = useState(false);
 	return (
 		<div className="w-full border dark:border-transparent relative inline-flex overflow-hidden rounded-md p-px focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
 			<span
@@ -22,24 +25,30 @@ export function SpotifyLastPlayedToast() {
 			<div className="flex h-full w-full items-center justify-between rounded-md bg-neutral-50 dark:bg-neutral-950 px-3 py-2 text-sm font-medium dark:text-white backdrop-blur-3xl">
 				<div className="flex items-center">
 					<div className="py-1 flex items-center">
-						<div className="p-px border flex items-center dark:bg-black rounded-md">
+						<div className="p-px border flex items-center dark:bg-black rounded-md relative">
+							{!isImageLoaded && <Skeleton className="absolute inset-0 w-[40px] h-[40px] rounded-md z-10" />}
 							<Image
 								src={spotify_elements.src}
 								alt="Spotify Playing Album Art"
 								width={40}
 								height={40}
-								className="rounded-md"
+								className={`rounded-md transition-opacity duration-300 ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
+								onLoad={() => setIsImageLoaded(true)}
+								onLoadingComplete={() => setIsImageLoaded(true)}
 							/>
 						</div>
 					</div>
 					<div className="flex flex-col ml-3 justify-between">
-						<div className="flex items-center pb-2 space-x-1">
+						<div className="flex items-center pb-2 space-x-1 relative">
+							{!isSpotifyLogoLoaded && <Skeleton className="absolute top-0 left-0 w-[20px] h-[20px] rounded-sm z-10" />}
 							<Image
 								src="/spotify_logo.png"
 								alt="Spotify Logo"
 								width={20}
 								height={20}
-								className="hover:animate-spin bg-neutral-800 rounded-sm p-0.5"
+								className={`hover:animate-spin bg-neutral-800 rounded-sm p-0.5 transition-opacity duration-300 ${isSpotifyLogoLoaded ? "opacity-100" : "opacity-0"}`}
+								onLoad={() => setIsSpotifyLogoLoaded(true)}
+								onLoadingComplete={() => setIsSpotifyLogoLoaded(true)}
 							/>
 							<div className="text-xs flex items-center text-neutral-600 dark:text-neutral-400 font-medium">
 								Last Played

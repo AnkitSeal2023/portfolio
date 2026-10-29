@@ -8,6 +8,7 @@ import {
   useMotionValue,
   useSpring,
 } from "motion/react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const AnimatedTooltip = ({
   items,
@@ -21,6 +22,7 @@ export const AnimatedTooltip = ({
   }[];
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
   const springConfig = { stiffness: 100, damping: 15 };
   const x = useMotionValue(0);
   const animationFrameRef = useRef<number | null>(null);
@@ -85,16 +87,23 @@ export const AnimatedTooltip = ({
               </motion.div>
             )}
           </AnimatePresence>
+          {!loadedImages[item.id] && (
+            <Skeleton className="absolute inset-0 cursor-pointer relative m-0 h-7 w-7 rounded-full border border-neutral-400 bg-neutral-100 p-1 dark:border-neutral-700 dark:bg-neutral-800 z-10" />
+          )}
           <img
             onMouseMove={handleMouseMove}
             height={100}
             width={100}
             src={item.image}
             alt={item.name}
-            // className="cursor-pointer relative bg-neutral-200 dark:bg-neutral-900 p-0.5 !m-0 h-7 w-7 rounded-full border-2 border-neutral-800 dark:border-white object-cover object-top transition duration-500 group-hover:z-30 group-hover:scale-105"
-            className="cursor-pointer relative m-0 h-7 w-7 rounded-full object-cover object-top transition duration-500 group-hover:z-30 group-hover:scale-105
-			border border-neutral-400 bg-neutral-100 p-1 text-xs text-neutral-500 dark:border-neutral-700 dark:bg-neutral-800"
-			onClick={() => window.open(item.url, "_blank")}
+            className={`cursor-pointer relative m-0 h-7 w-7 rounded-full object-cover object-top transition-all duration-500 group-hover:z-30 group-hover:scale-105 border border-neutral-400 bg-neutral-100 p-1 text-xs text-neutral-500 dark:border-neutral-700 dark:bg-neutral-800 ${loadedImages[item.id] ? "opacity-100" : "opacity-0"}`}
+            onClick={() => window.open(item.url, "_blank")}
+            ref={(el) => {
+              if (el && el.complete && !loadedImages[item.id]) {
+                setLoadedImages((prev) => ({ ...prev, [item.id]: true }));
+              }
+            }}
+            onLoad={() => setLoadedImages((prev) => ({ ...prev, [item.id]: true }))}
           />
         </div>
       ))}

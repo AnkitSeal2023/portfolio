@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
 import { Lens } from "@/components/ui/lens";
+import { Skeleton } from "@/components/ui/skeleton";
 
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 export function LensDemo() {
   const [hovering, setHovering] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
     <div>
@@ -15,13 +17,22 @@ export function LensDemo() {
         <Beams />
         <div className="relative z-10">
           <Lens hovering={hovering} setHovering={setHovering}>
-            <img
-              src="https://images.unsplash.com/photo-1713869820987-519844949a8a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="image"
-              width={500}
-              height={500}
-              className="rounded-2xl"
-            />
+            <div className="relative">
+              {!isImageLoaded && <Skeleton className="absolute inset-0 w-[500px] h-[500px] rounded-2xl z-10" />}
+              <img
+                src="https://images.unsplash.com/photo-1713869820987-519844949a8a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="image"
+                width={500}
+                height={500}
+                className={`rounded-2xl transition-opacity duration-300 ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
+                ref={(el) => {
+                  if (el && el.complete && !isImageLoaded) {
+                    setIsImageLoaded(true);
+                  }
+                }}
+                onLoad={() => setIsImageLoaded(true)}
+              />
+            </div>
           </Lens>
           <motion.div
             animate={{
