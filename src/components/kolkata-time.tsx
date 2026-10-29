@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Clock } from "lucide-react";
 
-export default function KolkataTime() {
+export default function KolkataTime({ className }: { className?: string }) {
 	const [kolkataTime, setKolkataTime] = useState<string>("");
 	const [offsetText, setOffsetText] = useState<string>("");
 
@@ -62,7 +62,9 @@ export default function KolkataTime() {
 	}
 
 	return (
-		<div className="group inline-flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 font-mono">
+		<div
+			className={`group inline-flex items-center gap-1 text-sm text-neutral-600 dark:text-neutral-400 font-mono${className ? ` ${className}` : ""}`}
+		>
 			<div className="rounded-lg p-0.5 border border-0.5 border-neutral-400 dark:border-neutral-600">
 				<Clock
 					size={18}

@@ -89,7 +89,8 @@ function StageInfo({ className }: { className?: string }) {
 	return (
 		<div className={className}>
 			<p className="text-[13px] text-soft leading-relaxed">
-				Kolkata, India · <span className="whitespace-nowrap">UTC +5:30</span>
+				Kolkata, India ·{" "}
+				<span className="whitespace-nowrap">UTC +5:30</span>
 			</p>
 			<KolkataTime className="text-[13px] mt-1" />
 			<SocialLinks className="mt-4" />
@@ -101,7 +102,11 @@ function StageInfo({ className }: { className?: string }) {
 function MobileTopBar() {
 	return (
 		<div className="lg:hidden flex items-center justify-between px-5 h-14 bg-paper sticky top-0 z-30">
-			<Link href="/" className="flex items-center gap-2" aria-label="Ankit Seal — home">
+			<Link
+				href="/"
+				className="flex items-center gap-2"
+				aria-label="Ankit Seal — home"
+			>
 				<Image
 					src="/pfp.webp"
 					alt=""
@@ -109,7 +114,9 @@ function MobileTopBar() {
 					height={32}
 					className="rounded-full bg-stage"
 				/>
-				<span className="text-sm font-semibold text-ink">Ankit Seal</span>
+				<span className="text-sm font-semibold text-ink">
+					Ankit Seal
+				</span>
 			</Link>
 			<div className="flex items-center gap-4">
 				{navLinks("flex items-center gap-4")}
@@ -137,7 +144,9 @@ function Stage() {
 				<Portrait />
 				<div className="mt-4 lg:mt-0">
 					<p className="text-lg font-semibold text-ink">Ankit Seal</p>
-					<p className="text-[13px] text-soft mt-0.5">Full-stack developer</p>
+					<p className="text-[13px] text-soft mt-0.5">
+						Full-stack developer
+					</p>
 				</div>
 				<StageInfo className="lg:hidden" />
 			</div>
@@ -146,7 +155,8 @@ function Stage() {
 			<div className="hidden lg:flex items-center justify-between gap-4">
 				<div>
 					<p className="text-[13px] text-soft leading-relaxed">
-						Kolkata, India · <span className="whitespace-nowrap">UTC +5:30</span>
+						Kolkata, India ·{" "}
+						<span className="whitespace-nowrap">UTC +5:30</span>
 					</p>
 					<KolkataTime className="text-[13px] mt-1" />
 				</div>
@@ -166,8 +176,8 @@ export function SiteFooter() {
 			<div className="mt-5 flex flex-col gap-4">
 				<SocialLinks className="justify-start -ml-2" />
 				<p className="text-[13px] text-soft">
-					Kolkata, India · © {new Date().getFullYear()} Ankit Seal · Design
-					inspired by ramx.in
+					Kolkata, India · © {new Date().getFullYear()} Ankit Seal ·
+					Design inspired by ramx.in
 				</p>
 			</div>
 		</footer>

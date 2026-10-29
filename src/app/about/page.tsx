@@ -104,14 +104,9 @@ export default function AboutPage() {
 			{
 				name: "Zed Editor",
 				url: "https://zed.dev/",
-<<<<<<< HEAD
-				image: "https://zed.dev/_next/static/media/stable-app-logo.9b5f959f.png",
-				description: "Fast, extensible code editor.",
-=======
 				image: "/zed_icon.png",
 				description:
 					"A lightweight, powerful code editor with extensive extensions for development.",
->>>>>>> ec14967928ab58ae9123a4724a28bbfb58b0f3cc
 			},
 			{
 				name: "Figma",
@@ -131,12 +126,14 @@ export default function AboutPage() {
 		{
 			year: "2024",
 			title: "Dove into Modern Frameworks",
-			description: "Mastered React, Next.js, and TypeScript. Built full-stack projects.",
+			description:
+				"Mastered React, Next.js, and TypeScript. Built full-stack projects.",
 		},
 		{
 			year: "2025",
 			title: "Building & Shipping",
-			description: "Creating polished web apps and exploring AI integration.",
+			description:
+				"Creating polished web apps and exploring AI integration.",
 		},
 	];
 	return (
@@ -247,7 +244,7 @@ export default function AboutPage() {
 									B.Tech in Computer Science & Engineering
 								</div>
 								<div className="text-sm text-neutral-600 dark:text-neutral-400 mt-1">
-									Currently in 3rd Year
+									Currently in Final Year
 								</div>
 							</div>
 						</div>
@@ -261,12 +258,12 @@ export default function AboutPage() {
 						className="mt-12 space-y-4 text-neutral-700 dark:text-neutral-300"
 					>
 						<p>
-							I'm Ankit, a full-stack developer who builds web applications
-							and enjoys learning new technologies.
+							I'm Ankit, a full-stack developer who builds web
+							applications and enjoys learning new technologies.
 						</p>
 						<p>
-							Outside of coding, I tweak my Linux setup, explore new tools,
-							and contribute to open-source.
+							Outside of coding, I tweak my Linux setup, explore
+							new tools, and contribute to open-source.
 						</p>
 					</motion.div>
 

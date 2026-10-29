@@ -51,3 +51,11 @@ export function AnimatedTooltipPreview() {
     </div>
   );
 }
+
+export function SocialLinks({ className }: { className?: string }) {
+  return (
+    <div className={`flex flex-row items-center w-full${className ? ` ${className}` : ""}`}>
+      <AnimatedTooltip items={people} />
+    </div>
+  );
+}
