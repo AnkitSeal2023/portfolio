@@ -23,36 +23,31 @@ export default function AboutPage() {
 				name: "React",
 				url: "https://react.dev",
 				image: "https://cdn-icons-png.flaticon.com/512/919/919851.png",
-				description:
-					"A JavaScript library for building user interfaces with reusable components and efficient rendering.",
+				description: "Component-based UI library.",
 			},
 			{
 				name: "Next.js",
 				url: "https://nextjs.org",
 				image: "/next.png",
-				description:
-					"A React framework for production with hybrid rendering (SSR, SSG) and file-based routing.",
+				description: "React framework with SSR/SSG.",
 			},
 			{
 				name: "TypeScript",
 				url: "https://www.typescriptlang.org",
 				image: "/ts.png",
-				description:
-					"A typed superset of JavaScript that adds optional static types and improves developer tooling.",
+				description: "Typed JavaScript for better tooling.",
 			},
 			{
 				name: "Tailwind CSS",
 				url: "https://tailwindcss.com",
 				image: "/tailwindcss.svg",
-				description:
-					"A utility-first CSS framework for rapidly building custom designs.",
+				description: "Utility-first CSS framework.",
 			},
 			{
 				name: "Framer Motion",
 				url: "https://framer.com/motion",
 				image: "https://avatars.githubusercontent.com/u/84441432?s=200&v=4",
-				description:
-					"An animation library for React that makes creating smooth, interactive animations simple.",
+				description: "Smooth animations for React.",
 			},
 		],
 		backend: [
@@ -60,36 +55,31 @@ export default function AboutPage() {
 				name: "Node.js",
 				url: "https://nodejs.org",
 				image: "/nodejs.svg",
-				description:
-					"A JavaScript runtime for building scalable server-side applications with non-blocking I/O.",
+				description: "Server-side JavaScript runtime.",
 			},
 			{
 				name: "Python",
 				url: "https://python.org",
 				image: "https://cdn-icons-png.flaticon.com/512/919/919852.png",
-				description:
-					"A versatile programming language known for simplicity and used in web, data science, and AI.",
+				description: "Versatile language for web & AI.",
 			},
 			{
 				name: "PostgreSQL",
 				url: "https://postgresql.org",
 				image: "https://cdn-icons-png.flaticon.com/512/4248/4248443.png",
-				description:
-					"A powerful, open-source relational database with advanced features and ACID compliance.",
+				description: "Advanced open-source relational DB.",
 			},
 			{
 				name: "MongoDB",
 				url: "https://mongodb.com",
 				image: "/mongodb.svg",
-				description:
-					"A NoSQL database that stores data in flexible JSON-like documents.",
+				description: "Flexible NoSQL document database.",
 			},
 			{
 				name: "REST APIs",
 				url: "https://restfulapi.net",
 				image: "https://cdn-icons-png.flaticon.com/512/3143/3143615.png",
-				description:
-					"An architectural style for building scalable web services using HTTP methods.",
+				description: "Scalable HTTP-based web services.",
 			},
 		],
 		tools: [
@@ -97,37 +87,31 @@ export default function AboutPage() {
 				name: "Git",
 				url: "https://git-scm.com",
 				image: "https://avatars.githubusercontent.com/u/18133?s=200&v=4",
-
-				description:
-					"A distributed version control system for tracking code changes and collaboration.",
+				description: "Distributed version control.",
 			},
 			{
 				name: "Docker",
 				url: "https://docker.com",
 				image: "https://cdn-icons-png.flaticon.com/512/919/919853.png",
-				description:
-					"A containerization platform for packaging applications and dependencies into isolated environments.",
+				description: "Application containerization.",
 			},
 			{
 				name: "Linux",
 				url: "https://linux.org",
 				image: "https://cdn-icons-png.flaticon.com/512/6124/6124995.png",
-				description:
-					"An open-source operating system kernel used for servers, development, and embedded systems.",
+				description: "Open-source OS for dev & servers.",
 			},
 			{
 				name: "Zed Editor",
 				url: "https://zed.dev/",
 				image: "https://zed.dev/_next/static/media/stable-app-logo.9b5f959f.png",
-				description:
-					"A lightweight, powerful code editor with extensive extensions for development.",
+				description: "Fast, extensible code editor.",
 			},
 			{
 				name: "Figma",
 				url: "https://figma.com",
 				image: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png",
-				description:
-					"A collaborative design tool for UI/UX design and prototyping in the browser.",
+				description: "Collaborative UI/UX design tool.",
 			},
 		],
 	};
@@ -136,23 +120,19 @@ export default function AboutPage() {
 		{
 			year: "2023",
 			title: "Started Learning Web Development",
-			description:
-				"Began my journey into full-stack development, learning HTML, CSS, and JavaScript fundamentals.",
+			description: "Began with HTML, CSS, and JavaScript fundamentals.",
 		},
 		{
 			year: "2024",
 			title: "Dove into Modern Frameworks",
-			description:
-				"Mastered React, Next.js, and TypeScript. Built multiple full-stack projects and contributed to open source.",
+			description: "Mastered React, Next.js, and TypeScript. Built full-stack projects.",
 		},
 		{
 			year: "2025",
 			title: "Building & Shipping",
-			description:
-				"Currently focused on creating polished web applications and exploring new technologies like AI integration.",
+			description: "Creating polished web apps and exploring AI integration.",
 		},
 	];
-
 	return (
 		<div className=" w-full h-full flex items-center justify-center">
 			<Navbar isSubPage={true} />
@@ -275,15 +255,12 @@ export default function AboutPage() {
 						className="mt-12 space-y-4 text-neutral-700 dark:text-neutral-300"
 					>
 						<p>
-							I'm Ankit, a full-stack developer. I build web
-							applications and enjoy learning new things along the
-							way.
+							I'm Ankit, a full-stack developer who builds web applications
+							and enjoys learning new technologies.
 						</p>
 						<p>
-							When I'm not coding, I'm probably tweaking my Linux
-							setup, exploring new tools, or contributing to
-							open-source. I like writing clean code and designing
-							interfaces that work well.
+							Outside of coding, I tweak my Linux setup, explore new tools,
+							and contribute to open-source.
 						</p>
 					</motion.div>
 

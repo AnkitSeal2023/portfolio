@@ -11,6 +11,7 @@ import { ResumeCard } from "@/components/resume-button";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { SpotifyLastPlayedToast } from "@/components/spotify-lastplayed";
 import LoadingScreen from "@/components/loading-screen";
+import Experience from "@/components/experience";
 import Projects from "@/components/projects/projects";
 import AboutSection from "@/components/aboutSection";
 import "lenis/dist/lenis.css";
@@ -286,6 +287,7 @@ export default function Page() {
 						</div>
 						<AnimatedTooltipPreview />
 						<SpotifyLastPlayedToast />
+						<Experience />
 						<Projects />
 						<AboutSection />
 						<Contact />

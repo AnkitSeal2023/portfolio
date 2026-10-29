@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Github } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 import ExpandTechStackOnHover, {
 	RevealCSSOnHover,
 	RevealExpressJSOnHover,
@@ -46,6 +47,7 @@ type RevealTechFlags = {
 };
 
 export function ThreeDCardDemo(props: ThreeDCardDemoProps) {
+	const [isImageLoaded, setIsImageLoaded] = useState(false);
 	const revealTechInitial: RevealTechFlags = {};
 	revealTechInitial.nextjs = props.techstack?.nextjs || false;
 	revealTechInitial.reactjs = props.techstack?.reactjs || false;
@@ -78,13 +80,20 @@ export function ThreeDCardDemo(props: ThreeDCardDemoProps) {
 				>
 					{props.description}
 				</CardItem>
-				<CardItem translateZ="100" className="w-full mt-4">
+				<CardItem translateZ="100" className="w-full mt-4 relative">
+					{!isImageLoaded && <Skeleton className="absolute top-0 left-0 h-60 w-full rounded-xl z-10" />}
 					<img
 						src={`${props.imageSrc}`}
 						height="1000"
 						width="1000"
-						className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+						className={`relative h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl transition-opacity duration-300 ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
 						alt={`${props.label} thumbnail`}
+						ref={(el) => {
+							if (el && el.complete && !isImageLoaded) {
+								setIsImageLoaded(true);
+							}
+						}}
+						onLoad={() => setIsImageLoaded(true)}
 					/>
 					<div className="flex pt-5 -space-x-1.5">
 						{revealTechInitial.aceternity && (

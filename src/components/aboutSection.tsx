@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PixelatedCanvas } from "./ui/pixelated-canvas";
 import { useEffect, useState } from "react";
 import { Tooltip } from "./ui/tooltip-card";
+import { Skeleton } from "@/components/ui/skeleton";
 import KolkataTime from "./kolkata-time";
 import { MapPin } from "lucide-react";
 import { Mars } from "lucide-react";
@@ -277,6 +278,7 @@ type ToolItem = {
 export default function AboutSection() {
 	const [hovering, setHovering] = useState(false);
 	const [windowWidth, setWindowWidth] = useState(0);
+	const [isPixelArtLoaded, setIsPixelArtLoaded] = useState(false);
 
 	// Track window width
 	useEffect(() => {
@@ -314,12 +316,18 @@ export default function AboutSection() {
 							maxFps={30}
 						/>
 					) : (
-						<Image
-							src={"/static_pixel_art.png"}
-							width={250}
-							height={250}
-							alt="Pixel Art Portrait"
-						/>
+						<div className="relative">
+							{!isPixelArtLoaded && <Skeleton className="absolute top-0 left-0 w-[250px] h-[250px] rounded-lg z-10" />}
+							<Image
+								src={"/static_pixel_art.png"}
+								width={250}
+								height={250}
+								alt="Pixel Art Portrait"
+								className={`transition-opacity duration-300 ${isPixelArtLoaded ? "opacity-100" : "opacity-0"}`}
+								onLoad={() => setIsPixelArtLoaded(true)}
+								onLoadingComplete={() => setIsPixelArtLoaded(true)}
+							/>
+						</div>
 					)}
 				</div>
 				<div className="flex flex-col justify-end h-full pt-2">
