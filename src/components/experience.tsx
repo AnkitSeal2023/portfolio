@@ -15,8 +15,15 @@ const experiences = [
 			"Engineered a gamification layer (credits, XP, engagement tracking) ensuring transactional consistency and concurrency-safe updates",
 			"Optimized CRUD operations and improved database reliability under concurrent request handling",
 		],
-		technologies: ["Next.js", "React", "TypeScript", "Node.js", "MongoDB", "Payload CMS"]
-	}
+		technologies: [
+			"Next.js",
+			"React",
+			"TypeScript",
+			"Node.js",
+			"MongoDB",
+			"Payload CMS",
+		],
+	},
 ];
 
 interface ExperienceProps {
@@ -37,14 +44,22 @@ export default function Experience({ showAllLink = true }: ExperienceProps) {
 							<div className="flex flex-col">
 								<h3 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">
 									{exp.link ? (
-										<a href={exp.link} target="_blank" rel="noopener noreferrer">
+										<a
+											href={exp.link}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="hover:underline"
+											title="https://www.babysteps.world/"
+										>
 											{exp.company}
 										</a>
 									) : (
 										exp.company
 									)}
 								</h3>
-								<p className="text-[15px] text-neutral-600 dark:text-neutral-400 mt-0.5">{exp.role}</p>
+								<p className="text-[15px] text-neutral-600 dark:text-neutral-400 mt-0.5">
+									{exp.role}
+								</p>
 							</div>
 							<div className="flex flex-col sm:items-end mt-2 sm:mt-0 text-sm text-neutral-500 dark:text-neutral-500">
 								<span>{exp.date}</span>
@@ -60,7 +75,9 @@ export default function Experience({ showAllLink = true }: ExperienceProps) {
 								{exp.description.map((item, idx) => (
 									<li key={idx} className="flex">
 										<span className="mr-3 mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neutral-400 dark:bg-neutral-600"></span>
-										<span className="leading-relaxed">{item}</span>
+										<span className="leading-relaxed">
+											{item}
+										</span>
 									</li>
 								))}
 							</ul>
