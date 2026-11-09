@@ -1,7 +1,14 @@
 import connectDB from "../../../../lib/mongodb";
 import User from "../../../../models/User";
 
+import { Resend } from "resend";
+
+let resend_ENV = process.env.RESEND_API_KEY;
+let contact_EMAIL = process.env.CONTACT_EMAIL;
+
 export async function POST(req: Request) {
+	const resend = new Resend(resend_ENV);
+
 	await connectDB(); // ensures one connection globally
 
 	const body = await req.json();
@@ -12,6 +19,22 @@ export async function POST(req: Request) {
 			email: body.email,
 			message: body.message,
 		});
+		if (contact_EMAIL) {
+			try {
+				const emailRes = await resend.emails.send({
+					from: "onboarding@resend.dev",
+					to: contact_EMAIL,
+					subject: `${body.name} sent you a message on your portfolio site`,
+					html: `<p>${body.message}</p>`,
+				});
+
+				if (emailRes.error) {
+					console.error("Failed to send email:", emailRes.error);
+				}
+			} catch (emailErr) {
+				console.error("Error sending email:", emailErr);
+			}
+		}
 
 		return new Response(JSON.stringify({ user }), {
 			status: 200,

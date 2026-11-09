@@ -1,5 +1,5 @@
 // small about section inside main page:
-import { GitHubCalendar } from "react-github-calendar";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { PixelatedCanvas } from "./ui/pixelated-canvas";
@@ -11,7 +11,11 @@ import { MapPin } from "lucide-react";
 import { Mars } from "lucide-react";
 import ArrowTooltip from "./ui/tooltip";
 import "cal-heatmap/cal-heatmap.css";
-import Example from "./github_calendar";
+
+const GitHubCalendar = dynamic(
+	() => import("react-github-calendar").then((module) => module.GitHubCalendar),
+	{ ssr: false },
+);
 
 function MyLocation() {
 	return (
