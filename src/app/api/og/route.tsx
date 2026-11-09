@@ -17,9 +17,7 @@ async function loadGoogleFont(font: string, text: string) {
 	throw new Error(`Failed to load font: ${font}`);
 }
 
-export const config = {
-	runtime: "edge",
-};
+export const runtime = "edge";
 
 export async function GET() {
 	const interFont = await loadGoogleFont("Inter", "Ankit Seal");
