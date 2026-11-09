@@ -30,6 +30,8 @@ export async function POST(req: Request) {
 
 				if (emailRes.error) {
 					console.error("Failed to send email:", emailRes.error);
+				} else {
+					console.log("Email sent successfully:", emailRes);
 				}
 			} catch (emailErr) {
 				console.error("Error sending email:", emailErr);
