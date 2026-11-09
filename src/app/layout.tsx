@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { JetBrains_Mono } from "next/font/google";
@@ -254,7 +255,11 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
-				<script defer src="https://cloud.umami.is/script.js" data-website-id="5677f68f-f1b0-4d2c-9b6f-8184aa551216"></script>
+				<Script
+					src="https://cloud.umami.is/script.js"
+					data-website-id="5677f68f-f1b0-4d2c-9b6f-8184aa551216"
+					strategy="afterInteractive"
+				/>
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
