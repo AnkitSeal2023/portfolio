@@ -9,6 +9,9 @@ let contact_EMAIL = process.env.CONTACT_EMAIL;
 export async function POST(req: Request) {
 	const resend = new Resend(resend_ENV);
 
+	console.log("Resend API Key:", resend_ENV);
+	console.log("Contact Email:", contact_EMAIL);
+
 	await connectDB(); // ensures one connection globally
 
 	const body = await req.json();
@@ -38,7 +41,7 @@ export async function POST(req: Request) {
 			}
 		}
 
-		return new Response(JSON.stringify({ user }), {
+		return new Response(JSON.stringify({}), {
 			status: 200,
 			headers: { "Content-Type": "application/json" },
 		});
